@@ -1,0 +1,4 @@
+interface:
+  display_name: "External Surface Audit"
+  short_description: "Audit public apps for exposed data and weak public surfaces"
+  default_prompt: "Use $external-surface-audit to review this public app for exposed data, weak anonymous access, and other low-impact external findings."
