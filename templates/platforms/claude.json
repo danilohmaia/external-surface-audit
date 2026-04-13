@@ -1,0 +1,20 @@
+{
+  "platform": "claude",
+  "displayName": "Claude Code",
+  "installType": "full",
+  "folderStructure": {
+    "root": ".claude",
+    "skillPath": "skills/external-surface-audit",
+    "filename": "SKILL.md"
+  },
+  "frontmatter": {
+    "name": "external-surface-audit",
+    "description": "Reusable playbook for external application security reviews focused on publicly reachable data exposure, weak backend authorization, insecure onboarding and invite flows, leaked internal assets, and other passive or low-impact findings across Supabase and non-Supabase stacks."
+  },
+  "sections": {
+    "quickReference": true
+  },
+  "title": "External Surface Audit",
+  "description": "Passive or low-impact playbook for auditing public applications for exposed data, weak anonymous access, public RPCs, storage leaks, insecure onboarding flows, and related external findings.",
+  "skillOrWorkflow": "Skill"
+}

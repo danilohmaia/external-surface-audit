@@ -1,6 +1,6 @@
 # External Surface Audit
 
-Reusable Codex skill for external application security reviews focused on publicly reachable data exposure, weak backend authorization, insecure onboarding and invite flows, leaked internal assets, and other low-impact black-box findings.
+Reusable AI coding-agent skill for external application security reviews focused on publicly reachable data exposure, weak backend authorization, insecure onboarding and invite flows, leaked internal assets, and other low-impact black-box findings.
 
 ## What It Does
 
@@ -35,7 +35,7 @@ external-surface-audit/
 
 This skill is intended to be distributed publicly via GitHub.
 
-If your Codex environment supports GitHub-based skill install, install it from the repository path that contains this folder.
+You can install it in Codex, Claude Code, or any similar environment that supports file-based skills.
 
 Example shape:
 
@@ -43,6 +43,28 @@ Example shape:
 - path: `skills/external-surface-audit`
 
 If you are publishing this skill inside a repository dedicated to the skill, the install path may simply be the repository root.
+
+### Codex
+
+Install or copy the folder into:
+
+```text
+~/.codex/skills/external-surface-audit
+```
+
+### Claude Code
+
+Install or copy the folder into:
+
+```text
+~/.claude/skills/external-surface-audit
+```
+
+The entry file remains:
+
+```text
+SKILL.md
+```
 
 ## When To Use
 
@@ -61,6 +83,14 @@ Typical outputs:
 - a full markdown report for developers
 - masked proof examples
 - a prioritized remediation checklist
+- an optional visual HTML summary with actions to take
+
+After the main audit, the skill should ask the user whether they want an HTML deliverable with:
+
+- a visual summary of the analysis
+- confirmed findings and inferred risks
+- severity labels
+- a checklist of actions to take
 
 ## Safety Model
 
@@ -80,6 +110,7 @@ Key guardrails:
 - keep real client data out of examples
 - prefer generic and masked samples only
 - keep detailed playbooks in `references/` and the main workflow in `SKILL.md`
+- keep the wording agent-neutral so the same skill works in Codex and Claude Code
 
 ## Credits
 

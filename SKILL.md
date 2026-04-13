@@ -240,13 +240,23 @@ Make that distinction explicit in the write-up.
 
 ## Response Style
 
-When answering the user:
+When producing the audit result:
 
 - lead with confirmed findings
 - keep examples masked
 - separate confirmed exposure from inferred risk
 - note what was tested and what was not
 - recommend specific next actions for the developer
+- after delivering the main findings, ask whether the user wants a visual HTML summary with a remediation checklist and the key analysis details
+
+If the user says yes to the HTML deliverable:
+
+- generate a standalone HTML file
+- make it visually clear and easy to scan
+- include a summary, confirmed findings, inferred risks, severity, and an action checklist
+- keep all proof examples masked
+- avoid including raw dumps, real tokens, or third-party PII
+- structure the checklist so it is easy for a developer or owner to track remediation work
 
 ## Deliverables
 
@@ -256,8 +266,11 @@ Typical deliverables are:
 - full audit markdown for developers
 - masked proof examples
 - prioritized remediation checklist
+- optional visual HTML report with checklist and analysis summary
 
 If the user asks for a reusable artifact, generate a structured markdown report using the template in [report-template.md](references/report-template.md).
+
+If the user has not asked for HTML yet, offer it explicitly after the main audit result instead of generating it by default.
 
 ## Distribution Notes
 
@@ -267,3 +280,9 @@ Keep this skill self-contained for public reuse:
 - keep detailed patterns in `references/`
 - avoid embedding real client data, tokens, or copied findings
 - prefer generic, masked examples only
+
+For cross-agent compatibility:
+
+- keep the instructions agent-neutral rather than Codex-specific
+- avoid relying on product-only tools or UI assumptions unless they are clearly optional
+- keep the workflow usable in Codex, Claude Code, and similar coding-agent environments
